@@ -15,7 +15,19 @@ hamBurg.addEventListener('click', createList);
 window.addEventListener('scroll', makeSectionActive);
 
 
+const newNav =  sectionArr.forEach(function(item) {
+  let li = document.createElement('li'); 
+  let link = document.createElement('a');
+  li.className = item.id;
+  link.setAttribute("onfocus", "setBgColor(this)")
+  link.href = `${item.id}`;
+  link.textContent = item.firstElementChild.firstElementChild.textContent;
+  link.className = "menu__link";
+  li.appendChild(link);
+  navList.appendChild(li);
+    });
 
+    navList.classList.add('hide');
 /**
 * @description Listener for the hamburger clcik event
 * @param event
@@ -28,20 +40,8 @@ function createList(e) {
   barThree.classList.toggle('change3');
 //TODO: add interaction to hamburger
 
-
-  sectionArr.forEach(function(item) {
-    let li = document.createElement('li'); 
-    let link = document.createElement('a');
-    li.className = item.id;
-    link.setAttribute("onfocus", "setBgColor(this)")
-    link.href = `${item.id}`;
-    link.textContent = item.firstElementChild.firstElementChild.textContent;
-    link.className = "menu__link";
-    li.appendChild(link);
-    navList.appendChild(li);
-  
-    });
-//TODO: create list and append to NavBar
+  navList.classList.toggle('hide');
+ //TODO: show and hide section
 
     let lists = document.querySelectorAll('li');
     let links = document.querySelectorAll('.menu__link');
@@ -106,8 +106,8 @@ function makeSectionActive(e) {
 
 function setBgColor(e){
   navList.childNodes.forEach( arg => arg.childNodes[0].classList.remove('active-nav'));
-  e.classList.add('active-nav');
-}
+    e.classList.add('active-nav');
+   }
 //TODO: add interaction when nav element is clicked
 
 

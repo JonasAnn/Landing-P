@@ -76,7 +76,7 @@ section {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .navbar__menu li {
