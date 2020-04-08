@@ -8,6 +8,6 @@ Project is a prerequisite for further learning. Also to learn to give interactio
 
 ## Language Used.
 
--HTML
--CSS
--JavaScript
+- HTML
+- CSS
+- JavaScript
